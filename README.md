@@ -29,21 +29,16 @@ tensorflow-gpu-docker/
    cd tensorflow-gpu-docker
    ```
 
-2. **Crear las carpetas necesarias:**
-   ```bash
-   mkdir -p data models outputs
-   ```
-
-3. **Levantar el entorno:**
+2. **Levantar el entorno:**
    ```bash
    docker compose up -d
    ```
 
-4. **Acceder a Jupyter Lab:**
+3. **Acceder a Jupyter Lab:**
    - URL: http://localhost:8888
    - Token: `tensorflow123`
 
-5. **Conectar VSCode (opcional):**
+4. **Conectar VSCode (opcional):**
    - Instalar extensión "Dev Containers"
    - Ctrl+Shift+P → "Dev Containers: Attach to Running Container"
    - Seleccionar `tensorflow-gpu`

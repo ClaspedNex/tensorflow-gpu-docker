@@ -17,13 +17,12 @@ outputs/*
 !outputs/.gitkeep
 models/*
 !models/.gitkeep
-!models/README.md
+!models/README.md+
 *.h5
 *.pkl
 *.joblib
 
 # Environment
-.env
 venv/
 env/
 
