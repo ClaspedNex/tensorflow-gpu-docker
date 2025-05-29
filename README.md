@@ -15,9 +15,9 @@ tensorflow-gpu-docker/
 ├── docker-compose.yml     # Configuración de servicios
 ├── .gitignore            # Archivos ignorados por Git
 ├── notebooks/            # Jupyter notebooks
-├── data/                 # Datasets (no versionado)
-├── models/              # Modelos entrenados (no versionado)
-├── outputs/             # Resultados y gráficos (no versionado)
+├── data/                 # Datasets 
+├── models/              # Modelos entrenados 
+├── outputs/             # Resultados y gráficos 
 └── src/                 # Scripts Python
 ```
 
@@ -25,7 +25,7 @@ tensorflow-gpu-docker/
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/TU_USUARIO/tensorflow-gpu-docker.git
+   git clone https://github.com/ClaspedNex/tensorflow-gpu-docker.git
    cd tensorflow-gpu-docker
    ```
 
@@ -75,15 +75,3 @@ docker compose up --build -d
 - Scikit-learn, Seaborn, Plotly
 - OpenCV, Pillow
 - Y más...
-
-## Notas importantes
-
-- Los datos, modelos y outputs **no se suben a Git** por su tamaño
-- Coloca tus datasets en la carpeta `data/`
-- Los modelos entrenados se guardan en `models/`
-- Los notebooks van en `notebooks/`
-- Los scripts Python van en `src/`
-
-## Licencia
-
-MIT License - ver archivo [LICENSE](LICENSE) para detalles.
