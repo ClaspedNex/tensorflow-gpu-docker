@@ -1,0 +1,39 @@
+name: tensorflow-gpu-docker
+
+services:
+  tensorflow:
+    container_name: tensorflow-gpu
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./notebooks:/app/notebooks
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./outputs:/app/outputs
+      - ./src:/app/src
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    ports:
+      - "${JUPYTER_PORT:-8888}:8888"
+    environment:
+      - JUPYTER_TOKEN=${JUPYTER_TOKEN:-tensorflow123}
+      - JUPYTER_PASSWORD=${JUPYTER_PASSWORD:-}
+    env_file:
+      - .env
+    command: >
+      bash -c "
+        jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+        --ServerApp.token='${JUPYTER_TOKEN:-tensorflow123}'
+        --ServerApp.password='${JUPYTER_PASSWORD:-}'
+        --ServerApp.allow_origin='*'
+        --ServerApp.root_dir='/app'
+      "
